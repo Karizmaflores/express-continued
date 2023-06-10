@@ -17,15 +17,16 @@ const show = (req, res) => {
 
 // Create
 const create = (req, res) => {
-    // const {body}  = req;
+    const {body}  = req;
     // console.log(body.body)
     const createObj = {
         "_id": uuidv4(), 
         // "name": name,
         // "occupation": ,
         // "avatar",
-        // postId: 1
-        ...body
+         ...body,
+        postId: 1
+       
     };
     contacts.push(createObj);
     // console.log(contacts)

@@ -1,5 +1,4 @@
 const vehicles = require('../data/vehicles');
-
 const { v4: uuidv4 } = require('uuid');
 
 // List 
@@ -20,15 +19,18 @@ const show = (req, res) => {
 const create = (req, res) => {
     const {body}  = req;
     // console.log(body.body)
-    const vehicle = {
+    const createObj = {
         "_id": uuidv4(), 
         ...body,
         postId: 1
     }
-    vehicles.push(vehicle);
+    vehicles.push(createObj);
     // console.log(vehicles)
-    res.json(vehicles)
+    res.json(createObj)
 }
+  
+//   module.exports = create;
+  
 
 module.exports = {
     list,
